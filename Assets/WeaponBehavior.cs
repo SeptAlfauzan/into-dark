@@ -5,14 +5,15 @@ using UnityEngine;
 public class WeaponBehavior : MonoBehaviour
 {
     // Start is called before the first frame update
-    Rigidbody2D weaponRb;
     public Camera camera;
-    Vector2 mousePos;
-    SpriteRenderer playerSpriteRenderer;
-    SpriteRenderer spriteRenderer;
-    Transform parent;
+    
+     public Rigidbody2D weaponRb;
+     Vector2 mousePos;
+     SpriteRenderer playerSpriteRenderer = null;
+     SpriteRenderer spriteRenderer;
+     public Transform parent = null;
 
-    bool isEquiped = false;
+     public bool isEquiped;
     void Start()
     {
         weaponRb = GetComponent<Rigidbody2D>();
@@ -26,15 +27,13 @@ public class WeaponBehavior : MonoBehaviour
     void Update()
     {
         //check whether this weapon object has parent object(equiped by player) or not
-        if (transform.parent != null && transform.parent.tag == "Player")
+        if (isEquiped)
         {
-            isEquiped = true;
-            playerSpriteRenderer = this.transform.parent.GetComponent<SpriteRenderer>();
+            playerSpriteRenderer = parent.GetComponent<SpriteRenderer>();
         }else{
-            isEquiped = false;
+            playerSpriteRenderer = null;
         }
-        GetComponent<ItemsBehavior>().IsEquiped = isEquiped;//update is equiped status in Items Behavior scripts
-        
+
         mousePos = camera.ScreenToWorldPoint(Input.mousePosition);
     }
 
@@ -58,4 +57,5 @@ public class WeaponBehavior : MonoBehaviour
             spriteRenderer.flipY = false;
         }
     }
+
 }

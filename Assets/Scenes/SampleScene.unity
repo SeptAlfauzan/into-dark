@@ -135,6 +135,7 @@ GameObject:
   - component: {fileID: 108915124}
   - component: {fileID: 108915128}
   - component: {fileID: 108915129}
+  - component: {fileID: 108915130}
   m_Layer: 10
   m_Name: AK 47
   m_TagString: Item
@@ -176,6 +177,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   camera: {fileID: 519420031}
+  isEquiped: 0
 --- !u!212 &108915126
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -270,6 +272,22 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   IsEquiped: 0
+--- !u!114 &108915130
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 108915123}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 993e4b0e936bf01f8b32ee6e805667cf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bulletPrefab: {fileID: 1108868280089396752, guid: 1b117809f58f09a33bcb294d9b2fdcb8,
+    type: 3}
+  firePoint: {fileID: 2110967592}
+  bulletForce: 20
 --- !u!1 &383644781
 GameObject:
   m_ObjectHideFlags: 0
@@ -704,7 +722,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2110967592}
   m_Layer: 10
-  m_Name: GameObject
+  m_Name: FirePoint
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -718,7 +736,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2110967591}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.363, y: -0.05, z: 0}
+  m_LocalPosition: {x: 0.355, y: -0.1, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 108915127}
